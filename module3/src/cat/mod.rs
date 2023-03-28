@@ -1,3 +1,3 @@
-pub use kitten::meow;
+pub use kitten::meow as woof;
 
-pub mod kitten;
+mod kitten;

@@ -5,8 +5,9 @@ edition = "2021"
 
 [workspace]
 members = [
-    "src/*",
+    #"src/*",
     "module1",
     "module2",
-    "module3"
+    "module3",
+    "module4",
 ]
