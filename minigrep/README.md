@@ -10,5 +10,9 @@
 котором нужно искать, как описано ниже:
 
 ```shell
-cargo run -- searchstring example-filename.txt
+cd minigrep
+
+# the      - search string
+# poem.txt - example filename
+cargo run -- the poem.txt
 ```
