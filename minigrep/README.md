@@ -11,8 +11,22 @@
 
 ```shell
 cd minigrep
-
-# the      - search string
-# poem.txt - example filename
-cargo run -- the poem.txt
+cargo run -- body poem.txt
 ```
+
+`body`     - search string\
+`poem.txt` - example filename
+
+    $ IGNORE_CASE=1 cargo run -- to poem.txt
+    # или
+    PS> $Env:IGNORE_CASE=1; cargo run -- to poem.txt
+    PS> Remove-Item Env:IGNORE_CASE
+
+Синтаксис `>` указывает оболочке записывать содержимое стандартного вывода в _output.txt_ вместо экрана.
+
+```shell
+cargo run > output.txt
+cargo run -- to poem.txt > output.txt
+IGNORE_CASE=1 cargo run -- to poem.txt > output.txt
+```
+
