@@ -1,6 +1,6 @@
+use std::env;
 use std::error::Error;
 use std::fs;
-use std::env;
 
 pub struct Config {
     query: String,
@@ -17,7 +17,8 @@ impl Config {
         // let query = args[1].clone();
         // let file_path = args[2].clone();
 
-        let mut args: impl Iterator<Item = String> = env::args();
+        //let mut args: impl Iterator<Item = String> = env::args();
+        let mut args = env::args();
         args.next();
 
         let query = match args.next() {
@@ -58,13 +59,11 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
 
 pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     // let mut results = Vec::new();
-    //
     // for line in contents.lines() {
     //     if line.contains(query) {
     //         results.push(line);
     //     }
     // }
-    //
     // results
 
     contents
@@ -76,21 +75,19 @@ pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
 pub fn search_case_insensitive<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     // let query = query.to_lowercase();
     // let mut results = Vec::new();
-    //
     // for line in contents.lines() {
     //     if line.to_lowercase().contains(&query) {
     //         results.push(line);
     //     }
     // }
-    //
     // results
 
     let query = query.to_lowercase();
+    let query = query.as_str();
 
     contents
         .lines()
-        .map(|line| line.to_lowercase())
-        .filter(|line| line.contains(query))
+        .filter(|line| line.to_lowercase().contains(query))
         .collect()
 }
 
