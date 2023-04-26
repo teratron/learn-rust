@@ -10,4 +10,5 @@ members = [
     "module3",
     "module4",
     "minigrep",
+    "inheritance"
 ]
