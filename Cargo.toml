@@ -5,11 +5,10 @@ edition = "2021"
 
 [workspace]
 members = [
-    "module1",
-    "module2",
-    "module3",
-    "module4",
+    "modules/module1",
+    "modules/module2",
+    "modules/module3",
+    "modules/module4",
     "minigrep",
     "inheritance",
-    #"patterns",
 ]
