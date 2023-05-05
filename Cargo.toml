@@ -11,4 +11,8 @@ members = [
     "modules/module4",
     "minigrep",
     "inheritance",
+    "patterns/behavioral/state",
+    "patterns/behavioral/chain_responsibility",
+    "patterns/behavioral/iterator",
+    "patterns/behavioral/memento",
 ]
